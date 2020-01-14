@@ -1,0 +1,13 @@
+---
+title: "Untitled"
+author: "Nic Doherty"
+date: "1/13/2020"
+output: pdf_document
+---
+
+```{r, comment="", echo=FALSE}
+
+writeLines(readLines("life_exp_analysis.Rmd"))
+
+```
+
