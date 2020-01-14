@@ -5,9 +5,26 @@ date: "1/13/2020"
 output: pdf_document
 ---
 
-```{r, comment="", echo=FALSE}
+```{r, echo=FALSE, eval=TRUE, message = FALSE}
 
-writeLines(readLines("life_exp_analysis.Rmd"))
+    library(tidyverse)
 
+    library(gapminder)
+
+    data("gapminder_unfiltered")
+
+    gapminder_unfiltered %>%
+
+      group_by(year) %>%
+
+      filter(lifeExp == max(lifeExp)) %>%
+
+      ungroup() %>%
+
+      select(year, country, lifeExp) %>%
+
+      arrange(year) ->
+
+      sumdat
 ```
 
